@@ -1,0 +1,13 @@
+<%=for message <- @chat_messages do %>
+	<p>
+		<%= message["user"] %>: <%= message["content"] %>
+	</p>
+<% end %>
+
+<div class="form-group">
+	<%= form_for :message, "#", [phx_submit: :send], fn f -> %>
+		<%= text_input f, :content, placeholder: "write your message here..." %>
+		<%= text_input f, :user, value: @user  %>
+		<%= submit "submit" %>
+	<% end %>
+</div>
