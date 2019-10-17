@@ -11,6 +11,14 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
+## To start remote nodes
+
+iex --name name@ip_address --cookie chocolate -S mix phx.server
+
+systemctl stop firewall
+
+iex> Node.connect :"name@ip_address"
+
 ## Learn more
 
   * Official website: http://www.phoenixframework.org/
